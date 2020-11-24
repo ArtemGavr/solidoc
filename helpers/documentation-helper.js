@@ -2,8 +2,10 @@
 
 module.exports = {
   get: function(contents, key) {
-    contents = contents || "";
-    const members = contents.split("@");
+    if (contents == undefined)
+      return "";
+
+    const members = contents.text.split("@");
 
     for(let i in members) {
       const entry = members[i];
